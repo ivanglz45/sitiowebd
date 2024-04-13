@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta sobre Diabetes</title>
+    <!-- Agrega enlaces a los estilos y scripts necesarios -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Encuesta sobre Diabetes</h1>
+     <style>
+        label,input{
+            font-size: 18px;
+        }
+     </style>
+    <form id="diabetesForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad" name="ciudad" required>
+
+        <style>
+            /* Define el tamaño de la fuente para las etiquetas y los elementos del formulario */
+            label, input, select, textarea {
+                font-size: 18px; /* Puedes ajustar el tamaño de la fuente según tus preferencias */
+                margin-bottom: 10px; /* Añade espacio entre los elementos del formulario */
+                display: block; /* Hace que los elementos del formulario se muestren en una línea separada */
+            }
+        
+            /* Estilo adicional para las etiquetas de las preguntas */
+            label {
+                font-weight: bold; /* Hace que las etiquetas de las preguntas sean más visibles */
+            }
+        
+            /* Estilo adicional para los elementos de entrada */
+            input, select, textarea {
+                padding: 8px;
+                width: 100%; /* Ocupa todo el ancho disponible */
+                box-sizing: border-box; /* Incluye el padding en el ancho total */
+            }
+        </style>
+        
+        <label>Preguntas:</label>
+
+        <!-- Pregunta 1 -->
+        <label for="pregunta1">1. ¿Cómo describirías tu nivel de actividad física?</label>
+        <select id="pregunta1" name="pregunta1" required>
+            <option value="a">Sedentario</option>
+            <option value="b">Moderado</option>
+            <option value="c">Activo</option>
+            <option value="d">Muy activo</option>
+        </select>
+
+        <div class="question">
+            <label for="question1">2. ¿Cuántas veces al día mides tu nivel de glucosa?</label>
+            <input type="number" id="question1" name="question1" min="0" required>
+        </div>
+         
+        <div class="question">
+            <label for="question3">3. ¿Cuál es tu tipo de dieta habitual?</label>
+            <select id="question3" name="question3" required>
+                <option value="">Selecciona una opción</option>
+                <option value="alta_en_azucar">Alta en azúcar</option>
+                <option value="equilibrada">Equilibrada</option>
+                <option value="baja_en_azucar">Baja en azúcar</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <label for="question4">4. ¿Tienes antecedentes familiares de diabetes?</label>
+            <select id="question4" name="question4" required>
+                <option value="">Selecciona una opción</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+
+        </div>
+        <div class="question">
+            <label for="question5">5. ¿Con qué frecuencia consumes alimentos procesados?</label>
+            <select id="question5" name="question5" required>
+                <option value="">Selecciona una opción</option>
+                <option value="diario">Diario</option>
+                <option value="semanal">Semanal</option>
+                <option value="raramente">Raramente</option>
+            </select>
+        </div>
+
+        <!-- Agrega más preguntas similares aquí -->
+
+        <button type="submit" style="font-size: 20px;">Enviar respuestas</button>
+            </form>
+        </div>
+    </section>
+    <section id="results" style="display: none;">
+        <div class="container">
+            <h2>Resultado</h2>
+            <div class="chart-container">
+                <canvas id="surveyChart"></canvas>
+            </div>
+            <p>Basado en tus respuestas, tu nivel de riesgo de diabetes es: <span id="diabetesRisk"></span></p>
+        </div>
+    </section>
+
+   
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Consejos para Controlar y Prevenir la Diabetes</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f5f5f5;
+            }
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                overflow: hidden;
+                text-align: center; /* Centrar el contenido */
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            h2 {
+                margin-top: 40px;
+                color: #333;
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+            li {
+                margin-bottom: 10px;
+                font-size: 18px;
+                line-height: 1.6;
+                color: #555;
+            }
+            li:before {
+                content: "\2022"; /* Utiliza un círculo como marcador */
+                color: #4CAF50; /* Color del círculo */
+                font-weight: bold;
+                display: inline-block;
+                width: 1em;
+                margin-left: -1em;
+            }
+            .tips-diabetes {
+                margin-top: 40px;
+                border-top: 1px solid #ccc;
+                padding-top: 20px;
+            }
+            .tips-diabetes h3 {
+                font-size: 24px;
+                color: #333;
+                margin-bottom: 20px;
+            }
+            .tips-diabetes p {
+                font-size: 16px;
+                line-height: 1.6;
+                color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <section id="tips" style="display: none;">
+            <div class="container">
+                <h2>Consejos para Controlar y Prevenir la Diabetes</h2>
+                <ul>
+                    <li>Mantén un peso saludable a través de una dieta balanceada y ejercicio regular.</li>
+                    <li>Monitorea tu nivel de glucosa en sangre regularmente y sigue las recomendaciones de tu médico.</li>
+                    <li>Limita el consumo de alimentos altos en azúcar y carbohidratos refinados.</li>
+                    <li>Consume alimentos ricos en fibra, como frutas, verduras y granos enteros.</li>
+                    <li>Evita el consumo de alcohol y tabaco, ya que pueden aumentar el riesgo de complicaciones de la diabetes.</li>
+                </ul>
+                <div class="tips-diabetes">
+                    <h3>Tips adicionales sobre la diabetes:</h3>
+                    <p>Aquí van algunos tips adicionales sobre cómo manejar la diabetes:</p>
+                    <p>1. Mantente activo: El ejercicio regular puede ayudar a controlar el azúcar en la sangre y mantener un peso saludable.</p>
+                    <p>2. Controla tu estrés: El estrés puede afectar los niveles de azúcar en la sangre, así que busca maneras de manejarlo, como la meditación o el yoga.</p>
+                    <p>3. Sigue un plan de comidas saludables: Una dieta equilibrada y baja en azúcar puede ayudar a controlar la diabetes y prevenir complicaciones.</p>
+                </div>
+            </div>
+        </section>
+    </body>
+    </html>
+    
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Encuesta sobre Diabetes. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Agrega aquí el código JavaScript para procesar las respuestas del formulario y mostrar los resultados en la gráfica
+        const form = document.getElementById('diabetesForm');
+        const chartSection = document.getElementById('results');
+        const tipsSection = document.getElementById('tips');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(form);
+            const responses = {};
+
+            for (const [key, value] of formData.entries()) {
+                responses[key] = value;
+            }
+
+            // Procesar respuestas y calcular el nivel de riesgo de diabetes
+            let diabetesRisk = 'Bajo';
+            if (responses.question1 >= 3 || responses.question2 === 'sedentario' || responses.question3 === 'alta_en_azucar') {
+                diabetesRisk = 'Alto';
+            } else if (responses.question1 >= 1 || responses.question2 === 'moderado' || responses.question3 === 'equilibrada') {
+                diabetesRisk = 'Medio';
+            }
+
+            // Mostrar la sección de resultados y el nivel de riesgo de diabetes
+            chartSection.style.display = 'block';
+            const diabetesRiskElement = document.getElementById('diabetesRisk');
+            diabetesRiskElement.textContent = diabetesRisk;
+            diabetesRiskElement.style.color = getColorForRisk(diabetesRisk); // Función para cambiar el color del texto según el riesgo
+
+
+            // Dibujar la gráfica
+            const ctx = document.getElementById('surveyChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Bajo', 'Medio', 'Alto'],
+            datasets: [{
+                label: 'Riesgo de Diabetes',
+                data: [
+                    diabetesRisk === 'Bajo' ? 1 : 0,
+                    diabetesRisk === 'Medio' ? 1 : 0,
+                    diabetesRisk === 'Alto' ? 1 : 0
+                ],
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(255, 99, 132, 0.5)'
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                position: 'bottom',
+                    },
+                }
+            });
+
+            // Mostrar la sección de consejos si el riesgo de diabetes es alto
+            if (diabetesRisk === 'Alto') {
+                tipsSection.style.display = 'block';
+            } else {
+                tipsSection.style.display = 'none';
+            }
+        });
+        
+        function getColorForRisk(risk) {
+    switch (risk) {
+        case 'Bajo':
+            return 'green'; // Verde para riesgo bajo
+        case 'Medio':
+            return 'orange'; // Naranja para riesgo medio
+        case 'Alto':
+            return 'red'; // Rojo para riesgo alto
+        default:
+            return 'black'; // Negro por defecto
+    }
+}
+    </script>
+</body>
+</html>
+

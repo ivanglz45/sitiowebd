@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Design Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos globales */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            letter-spacing: 2px;
+        }
+        #contact {
+            padding: 20px;
+            background-color: #e9e9e9;
+            text-align: center; /* Centrar contenido */
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden; /* Para contener los elementos flotantes */
+        }
+        #contact img {
+            display: inline-block; /* Hacer la imagen un elemento de bloque */
+            width: 150px;
+        }
+          
+        /* Estilos para el formulario */
+       
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="password"],
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #555;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Detector de apoyo para enfermedades más comunes en la región </h1>
+    </header>
+    <section id="contact">
+        <div class="container">
+            <img src="C:\Users\ivanh\Downloads\_b5eedddc-080a-4330-978c-3d9616efc3dd.jpg" alt="Imagen" id="logo">
+      
+            
+            <form id="loginForm" action="login.php" method="post">
+                <input type="text" name="usuario" placeholder="Usuario" required>
+                <input type="password" name="contrasena" placeholder="Contraseña" required>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+            
+            <h2>Registro</h2>
+            <form id="registerForm" action="registro.php" method="post">
+                <!-- Agrega campos adicionales para el registro según tus necesidades -->
+                <input type="text" name="nuevoUsuario" placeholder="Nuevo Usuario" required>
+                <input type="password" name="nuevaContrasena" placeholder="Nueva Contraseña" required>
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Aquí deberías implementar la lógica de inicio de sesión en el servidor
+
+            // Redirige al usuario después de iniciar sesión
+            window.location.href = "file:///C:/Users/ivanh/OneDrive/Escritorio/PAGINA%20WEB/pagina%20web%20principal.html"; // Reemplaza 'pagina_inicio.html' con tu URL deseada
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Aquí deberías implementar la lógica de registro en el servidor
+
+            // Redirige al usuario después de registrarse
+            window.location.href = "file:///C:/Users/ivanh/OneDrive/Escritorio/PAGINA%20WEB/pagina%20web%20principal.html"; // Reemplaza 'pagina_inicio.html' con tu URL deseada
+        });
+    </script>
+</body>
+</html>
+ </div>
+
+            <footer>
+                <div class="container">
+                    <p>&copy; 2024 Detector de apoyo para enfermedades más comunes en la región. UPALT </p>
+                </div>
+            </footer>
+        </body>
+        </html>
